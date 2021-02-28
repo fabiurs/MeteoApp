@@ -1,0 +1,74 @@
+
+.hide{
+    opacity: 0;
+    transition: all 1s ease;
+}
+.show{
+    opacity: 1!important;
+}
+
+html, body{
+    background: #c9e6ff!important;
+}
+
+h1{
+    margin-top: 30px!important;
+}
+
+h1, h2, h3, h4, h5, p, span{
+    color: #262423!important;
+}
+
+h2{
+    text-align: center;
+}
+
+#forecastTable tr:nth-child(odd)
+{
+    color: #B8DFDC!important;
+    background: #2A3A59!important;
+}
+
+#forecastTable tr:nth-child(even)
+{
+    background: #c9e6ff!important;
+}
+
+.btn-search{
+    background: #2A3A59!important;
+    color: white!important;
+}
+
+.spacer{
+    height: 100px;
+}
+
+.c-temperature{
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+th, td{
+    text-align: center!important;
+}
+
+.c-temperature .icon img{
+    height: 80px;
+}
+
+@media screen and (max-width: 768px){
+    h1{
+        margin-top: 30px!important;
+        text-align: center;
+    }
+
+    .spacer{
+        height: 30px;
+    }
+    table{
+        margin-bottom: 30px!important;
+    }
+}
