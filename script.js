@@ -48,7 +48,7 @@ btnGetUserLocation.addEventListener('click', function(){
 var getWeatherData = async function (cityName) {
     numeOras.innerHTML = cityName;
     numeOras2.innerHTML = cityName;
-    var locationResponse = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=iDAp6VGDtnGdE5xJHG6maAPVkrDFsFQn&q=${cityName}`)
+    var locationResponse = await axios.get(`https://dataservice.accuweather.com/locations/v1/cities/search?apikey=iDAp6VGDtnGdE5xJHG6maAPVkrDFsFQn&q=${cityName}`)
         .then(res => {
             console.log(res.data[0]);
             return res.data[0].Key;
@@ -57,7 +57,7 @@ var getWeatherData = async function (cityName) {
             console.log(err);
         })
 
-    var conditionsResponse = await axios.get(`http://dataservice.accuweather.com//currentconditions/v1/${locationResponse}?apikey=iDAp6VGDtnGdE5xJHG6maAPVkrDFsFQn&language=ro-ro`)
+    var conditionsResponse = await axios.get(`https://dataservice.accuweather.com//currentconditions/v1/${locationResponse}?apikey=iDAp6VGDtnGdE5xJHG6maAPVkrDFsFQn&language=ro-ro`)
         .then(res => {
             displayIcon(res.data[0].WeatherIcon, res.data[0].WeatherText);
             displayCurrentConditions(res.data[0].Temperature.Metric.Value);
@@ -67,7 +67,7 @@ var getWeatherData = async function (cityName) {
             console.log(err);
         })
 
-    var forecastResponse = await axios.get(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationResponse}?apikey=iDAp6VGDtnGdE5xJHG6maAPVkrDFsFQn&metric=true`)
+    var forecastResponse = await axios.get(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationResponse}?apikey=iDAp6VGDtnGdE5xJHG6maAPVkrDFsFQn&metric=true`)
         .then(res => {
             showForecast(res.data.DailyForecasts);
             return res.data.DailyForecasts;
