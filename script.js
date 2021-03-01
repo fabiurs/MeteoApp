@@ -59,7 +59,7 @@ var getWeatherData = async function (cityName) {
 
     var conditionsResponse = await axios.get(`https://dataservice.accuweather.com//currentconditions/v1/${locationResponse}?apikey=iDAp6VGDtnGdE5xJHG6maAPVkrDFsFQn&language=ro-ro`)
         .then(res => {
-            displayIcon(res.data[0].WeatherIcon, res.data[0].WeatherText);
+            displayIconAndText(res.data[0].WeatherIcon, res.data[0].WeatherText);
             displayCurrentConditions(res.data[0].Temperature.Metric.Value);
             return res.data[0].Temperature.Metric.Value;
         })
